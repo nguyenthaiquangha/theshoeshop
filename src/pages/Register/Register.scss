@@ -1,0 +1,44 @@
+.register-form {
+    display: flex;
+    align-items: center;
+    padding: 4.8rem 8rem 8rem 11rem;
+    flex-wrap: wrap;
+    hr {
+        width: 100%;
+        border: 1px solid #dedddc;
+    }
+    .register-title {
+        text-align: left;
+        width: 156px;
+        height: 48px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+
+        color: #000000;
+    }
+    .row {
+        display: flex;
+        width: 100%;
+        margin-top: 5rem;
+        .col-left {
+            width: 50%;
+        }
+        .col-right {
+            width: 50%;
+            .gender-container {
+                display: flex;
+                align-items: center;
+
+                .gender-label {
+                    margin-right: 1rem;
+                }
+
+                .gender-options {
+                    margin-left: 1rem;
+                }
+            }
+        }
+    }
+}
