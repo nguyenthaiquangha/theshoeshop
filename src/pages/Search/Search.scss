@@ -1,0 +1,82 @@
+.search-input-container {
+    margin-top: 7rem;
+    margin-left: 5rem;
+    margin-bottom: 4.4rem;
+
+    .form-inline {
+        display: flex;
+
+        label {
+            color: rgba(0, 0, 0, 0.6);
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+        }
+
+        input {
+            background: rgba(33, 33, 33, 0.08);
+            border-radius: 4px 4px 0px 0px;
+            width: 44rem;
+            height: 5.4rem;
+            padding: 1.6rem 1.2rem 1.4rem 1.4rem;
+        }
+
+        .btn-search {
+            background: #6200ee;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12),
+                0px 2px 4px rgba(0, 0, 0, 0.2);
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 1.4rem;
+            margin-left: 4rem;
+            padding: 12px;
+            cursor: pointer;
+        }
+    }
+}
+
+.search-result-container {
+    .result-title {
+        display: flex;
+        align-items: center;
+        background: linear-gradient(180deg, #f21299 0%, #1b02b5 100%);
+        width: 100%;
+        height: 7.4rem;
+
+        h3 {
+            color: #ffffff;
+            font-size: 4rem;
+            line-height: 4.8rem;
+            margin-left: 3rem;
+        }
+    }
+
+    .search-by-price {
+        margin-top: 2.7rem;
+        margin-left: 10.5rem;
+        margin-bottom: 10rem;
+
+        label {
+            font-size: 1.8rem;
+            line-height: 2.4rem;
+            letter-spacing: 0.135px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        select {
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.15px;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            padding: 1.6rem 1.2rem 1.4rem 1.4rem;
+            width: 44rem;
+            height: 5.4rem;
+            background: rgba(33, 33, 33, 0.08);
+            border-radius: 4px 4px 0px 0px;
+
+            option {
+                color: rgba(0, 0, 0, 0.87);
+            }
+        }
+    }
+}
