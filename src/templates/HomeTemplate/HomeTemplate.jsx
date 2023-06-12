@@ -1,15 +1,19 @@
-import React, { Fragment } from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { Fragment, Suspense } from 'react'
+import { NavLink, Outlet } from 'react-router-dom'
+import HeaderHomeTemplate from './component/HeaderHomeTemplate'
+import FooterHomeTemplate from './component/FooterHomeTemplate'
 
 function HomeTemplate() {
     return (
         <div>
             <Fragment>
-                <header style={{ height: 80, background: 'blue', padding: 50, color: 'white' }}>Header</header>
-                <div style={{minHeight: '75vh'}}>
-                    <Outlet></Outlet>
+               <HeaderHomeTemplate />
+                <div style={{ minHeight: '75vh' }}>
+                    <Suspense fallback={<>Loading...</>}>
+                        <Outlet />
+                    </Suspense>
                 </div>
-                <footer style={{ height: 80, background: 'black', padding: 50, color: 'white' }}>Header</footer>
+                <FooterHomeTemplate />
             </Fragment>
         </div>
     )
