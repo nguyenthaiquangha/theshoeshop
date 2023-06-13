@@ -3,10 +3,12 @@
     align-items: center;
     padding: 4.8rem 8rem 8rem 11rem;
     flex-wrap: wrap;
+
     hr {
         width: 100%;
         border: 1px solid #dedddc;
     }
+
     .register-title {
         text-align: left;
         width: 156px;
@@ -18,15 +20,61 @@
 
         color: #000000;
     }
+
     .row {
         display: flex;
         width: 100%;
         margin-top: 5rem;
+
+        input {
+            width: 70%;
+            height: 5rem;
+            background: rgba(33, 33, 33, 0.08);
+            border-radius: 4px 4px 0px 0px;
+            font-size: 1.6rem;
+            padding: 1.6rem 1.2rem 1.4rem 1.4rem;
+        }
+
+        .regis-content {
+            margin-bottom: 3.3rem;
+        }
+
         .col-left {
             width: 50%;
+
+            p {
+                color: #f50e0e;
+            }
+
+            .password-input-container {
+                position: relative;
+
+                .show-password {
+                    background-image: url("path/to/eye-icon.png");
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    padding-right: 30px;
+                    /* Tùy chỉnh giá trị phù hợp */
+                }
+
+                .password-toggle {
+                    position: absolute;
+                    top: 50%;
+                    right: 35%;
+                    transform: translateY(-50%);
+
+                    cursor: pointer;
+                }
+            }
         }
+
         .col-right {
             width: 50%;
+
+            p {
+                color: #f50e0e;
+            }
+
             .gender-container {
                 display: flex;
                 align-items: center;
@@ -35,9 +83,69 @@
                     margin-right: 1rem;
                 }
 
-                .gender-options {
+                .gender-input {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
                     margin-left: 1rem;
+
+                    label {
+
+                        .hidden-radio {
+                            position: absolute;
+                            opacity: 0;
+                            pointer-events: none;
+                        }
+
+                        .custom-radio {
+                            position: relative;
+                            display: inline-block;
+                            left: 1rem;
+                            background: rgba(98, 0, 238, 0.04);
+                            width: 2rem;
+                            height: 2.5rem;
+                            border: 2px solid #6200ee;
+                            border-radius: 50%;
+                            margin-right: 5px;
+                            cursor: pointer;
+                        }
+
+                        .custom-radio::before {
+                            position: relative;
+                            content: "";
+                            display: block;
+                            width: 1rem;
+                            height: 1.5rem;
+                            background-color: #6200ee;
+                            border-radius: 50%;
+                            opacity: 0;
+                            top: 15%;
+                            left: 20%;
+                            transform: scale(0) translate(-50%, -50%);
+                            transition: opacity 0.2s ease, transform 0.2s ease;
+                        }
+
+                        .hidden-radio:checked~.custom-radio::before {
+                            opacity: 1;
+                            transform: scale(1);
+                        }
+
+                    }
+
+
                 }
+
+            }
+
+            .btn-submit {
+                background: #6200ee;
+                color: #ffffff;
+                box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12),
+                    0px 2px 4px rgba(0, 0, 0, 0.2);
+                border-radius: 50px;
+                padding: 1.6rem;
+                margin-top: 3rem;
+                cursor: pointer;
             }
         }
     }
