@@ -3,7 +3,10 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { saveLocalStorage } from '../../utils';
 import { ACCESS_TOKEN } from '../../constant';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import './Login.scss'
+import { useState } from 'react';
+import { EyeIcon, EyeSlashIcon } from 'src/assets/icon';
 
 const schemaLogin = Yup.object({
   email: Yup.string().email().required('Username is required'),
@@ -44,29 +47,73 @@ function Login() {
     },
   });
 
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+  const passwordInputType = showPassword ? 'text' : 'password';
   return (
-    <form onSubmit={formik.handleSubmit}>
-      <div>
-        <label>Email</label>
-        <input type='text' name='email' {...formik.getFieldProps('email')} />
-        {formik.errors.email && formik.touched.email && (
-          <p>{formik.errors.email}</p>
-        )}
-      </div>
-      <div>
-        <label>Password</label>
-        <input
-          type='text'
-          name='password'
-          {...formik.getFieldProps('password')}
-        />
-        {formik.errors.password && formik.touched.password && (
-          <p>{formik.errors.password}</p>
-        )}
-      </div>
+    <>
+      <h1 className='login-title'>Login</h1>
+      <form className='login-form' onSubmit={formik.handleSubmit}>
+        <hr />
 
-      <button type='submit'>Login</button>
-    </form>
+        <div className="row">
+          <div className="col-3"></div>
+          <div className="col-6">
+            <div>
+              <label>Email</label>
+              <br />
+              <input type='text' name='email' {...formik.getFieldProps('email')} />
+              {formik.errors.email && formik.touched.email && (
+                <p>{formik.errors.email}</p>
+              )}
+            </div>
+          </div>
+          <div className="col-3"></div>
+        </div>
+
+        <div className="row">
+          <div className="col-3"></div>
+          <div className="col-6">
+            <div >
+              <label>Password</label>
+              <br />
+              <div className="password-input-container">
+                <input
+                  type={passwordInputType}
+                  name='password'
+                  {...formik.getFieldProps('password')}
+                />
+                <span
+                  className="password-toggle"
+                  onClick={togglePasswordVisibility}>
+                  {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
+                </span>
+              </div>
+              {formik.errors.password && formik.touched.password && (
+                <p>{formik.errors.password}</p>
+              )}
+            </div>
+          </div>
+          <div className="col-3"></div>
+        </div>
+
+        <div className="row">
+          <div className="col-3"></div>
+          <div className="col-6">
+            <NavLink to={'/register'}>
+              Register now?
+            </NavLink>
+            <button className='btn-login' type='submit'>LOGIN</button>
+          </div>
+          <div className="col-3"></div>
+        </div>
+
+
+
+      </form>
+    </>
   );
 }
 

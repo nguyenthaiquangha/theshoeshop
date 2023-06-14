@@ -92,12 +92,7 @@ function Search() {
           </select>
         </div>
 
-        <ListProduct
-          style={{
-            marginBottom: '5rem',
-          }}
-          listProduct={sortOption ? sortedResults : searchResults}
-        />
+        <ListProduct style={{marginBottom: '5rem', }} listProduct={sortOption ? sortedResults : searchResults}/>
 
 
       </div>

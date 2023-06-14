@@ -3,8 +3,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getProductByIdApi } from '../../services/product.services';
 
 const initialState = {
-	listProduct: [],
-	productDetail: {},
+    listProduct: [],
+    ListCategory: [],
 	isLoading: true,
 };
 
@@ -23,9 +23,11 @@ const ProductSlice = createSlice({
 
 	reducers: {
 		setListProduct: (state, action) => {
-			state.listProduct = action.payload;
-		},
-
+            state.listProduct = action.payload
+        },
+        setListCategory: (state, action) => {
+            state.ListCategory = action.payload
+        },
 		setProductDetail: (state, action) => {
 			state.productDetail = action.payload;
 		},
@@ -44,7 +46,7 @@ const ProductSlice = createSlice({
 });
 
 // action creator
-export const { setListProduct, setProductDetail } = ProductSlice.actions;
+export const { setListProduct, setProductDetail ,setListCategory} = ProductSlice.actions;
 
 export default ProductSlice.reducer;
 

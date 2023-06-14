@@ -1,0 +1,66 @@
+.card-product {
+    background: #F8F8F8;
+    /* shadow */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .icon-heart {
+        position: absolute;
+        font-family: inter;
+        font-size: 4rem;
+        font-weight: 4rem;
+        line-height: 4.8rem;
+        top: 3rem;
+        right: 2.6rem;
+    }
+
+    .card-product-img {
+        // position: absolute;
+        padding: 0 6.5rem ;
+        img {
+            width: 21rem;
+            height: 27rem;
+        }
+    }
+
+    .card-product-interact {
+        display: flex;
+        align-items: center;
+        flex-basis: 50%;
+        align-items: end;
+
+        .card-product-btn {
+            width: 50%;
+            height: 6.4rem;
+            border: none;
+            font-size: 2.4rem;
+            font-family: inter;
+            font-style: normal;
+            line-height: 29px;
+            cursor: pointer;
+
+            &.buy-now {
+                background: #9DE167;
+            }
+
+            &.price {
+                font-weight: 600;
+            }
+        }
+    }
+
+    .card-product-content {
+        padding: 0 2.4rem;
+
+        .content-title {
+            font-size: 2.4rem;
+            font-weight: 300;
+            margin: 0;
+            color: #000000;
+        }
+
+        .content-sub {}
+    }
+}

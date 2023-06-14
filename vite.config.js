@@ -10,9 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       src: '/src',
-      public: '/public',
-      // '~': '/src',
-      // '@': '/src',
-    },
-  },
+      public: '/public'
+    }
+  }
 })

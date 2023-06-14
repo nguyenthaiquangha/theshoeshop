@@ -1,0 +1,104 @@
+.login-title {
+    width: 156px;
+    height: 48px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+    padding: 4.8rem 8rem 0 11rem;
+    ;
+}
+
+.login-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4.8rem 8rem 8rem 11rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    hr {
+        width: 100%;
+        border: 1px solid #dedddc;
+    }
+
+    .row {
+        display: flex;
+        width: 100%;
+
+        .col-3 {
+            width: 30%;
+        }
+
+        .col-6 {
+            width: 60%;
+
+            label {
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+            }
+
+            input {
+                width: 100%;
+                height: 5rem;
+                background: rgba(33, 33, 33, 0.08);
+                border-radius: 4px 4px 0px 0px;
+                font-size: 1.6rem;
+                padding: 1.6rem 1.2rem 1.4rem 1.4rem;
+                margin: 1rem 0;
+            }
+
+            p {
+                color: #f50e0e;
+            }
+
+            a {
+                position: absolute;
+                right: 40%;
+                margin-top: 3rem;
+                text-decoration: none;
+                font-size: 1.8rem;
+                letter-spacing: 0.135px;
+
+                color: rgba(21, 42, 235, 0.8);
+            }
+
+            .btn-login {
+                position: absolute;
+                right: 30%;
+                background: #6200ee;
+                color: #ffffff;
+                box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12),
+                    0px 2px 4px rgba(0, 0, 0, 0.2);
+                border-radius: 50px;
+                padding: 1.6rem;
+                margin-top: 2rem;
+                cursor: pointer;
+            }
+
+            .password-input-container {
+                position: relative;
+
+                .show-password {
+                    background-image: url("path/to/eye-icon.png");
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    padding-right: 30px;
+                }
+
+                .password-toggle {
+                    position: absolute;
+                    top: 50%;
+                    right: 2%;
+                    transform: translateY(-50%);
+
+                    cursor: pointer;
+                }
+            }
+
+        }
+    }
+
+
+}

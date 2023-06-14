@@ -1,0 +1,23 @@
+.cart {
+    position: relative;
+    padding: 4.9rem 6.9rem;
+
+    h2 {
+        font-family: inter;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4rem;
+        line-height: 4.8rem;
+        color: #000000;
+    }
+
+    .cart-line {
+        position: absolute;
+        width: 1212.03px;
+        height: 0px;
+        left: 68px;
+        top: 17rem;
+        border: 1px solid #DEDDDC;
+        transform: rotate(0.37deg);
+    }
+}

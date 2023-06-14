@@ -1,0 +1,52 @@
+.header-home-template {
+
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    background: #000000;
+    padding: 0 2.4rem;
+    justify-content: space-between;
+
+    .header-nav-right,.header-search {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .header-text-search {
+       font-size:  3rem;
+       user-select: none;
+    }
+    .header-link {
+        text-decoration: none;
+    }
+    .header-text-search,.header-link {
+        color:#F6F6F6;
+        font-weight: 300; 
+    }
+}
+.header-menu {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    padding: 0 2.4rem;
+    .menu-item {
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 2rem;
+        color: #000000;
+    }
+    .menu-item + .menu-item {
+        margin-left: 2rem;
+    }
+
+}
+.card-icon {
+    display: flex;
+    p {
+       color: #F6F6F6;
+       font-size: 2rem;
+       font-weight: 400;
+       line-height: 2.4rem;
+   }
+
+}

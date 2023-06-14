@@ -1,9 +1,11 @@
-import './Register.scss';
 import { useFormik } from 'formik';
 
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { EyeIcon, EyeSlashIcon } from 'src/assets/icon';
+import { useState } from 'react';
+import './Register.scss';
 
 const nameRegex = /^[a-zA-ZÀ-ỹ\s']+$/;
 const phoneRegex = /^[0-9]{10}$/;
@@ -40,7 +42,6 @@ function Register() {
       userName: '',
       phone: '',
       genderString: 'male',
-      // gender: true,
     },
 
 
@@ -65,6 +66,20 @@ function Register() {
       }
     },
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+
+  };
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword((prevShowConfirmPassword) => !prevShowConfirmPassword);
+
+  };
+
+  const passwordInputType = showPassword ? 'text' : 'password';
+  const confirmPasswordInputType = showConfirmPassword ? 'text' : 'password';
+
   return (
     <form onSubmit={formik.handleSubmit} className='register-form'>
       <h1 className='register-title'>Register</h1>
@@ -73,6 +88,7 @@ function Register() {
         <div className="col-left ">
           <div className='regis-content'>
             <label>Email</label>
+            <br />
             <input
               type='text'
               name='email'
@@ -85,12 +101,21 @@ function Register() {
           </div>
           <div className='regis-content'>
             <label>Password</label>
-            <input
-              type='text'
-              name='password'
-              {...formik.getFieldProps('password')}
+            <br />
+            <div className="password-input-container">
+              <input
+                className='show-password'
+                type={passwordInputType}
+                name='password'
+                {...formik.getFieldProps('password')}
 
-            />
+              />
+              <span
+                className="password-toggle"
+                onClick={togglePasswordVisibility}>
+                {showPassword ? <EyeSlashIcon /> : <EyeIcon />}
+              </span>
+            </div>
 
             {formik.errors.password && formik.touched.password && (
               <p>{formik.errors.password}</p>
@@ -99,11 +124,20 @@ function Register() {
 
           <div className='regis-content'>
             <label>Confirm Password</label>
-            <input
-              type='text'
-              name='confirmPassword'
-              {...formik.getFieldProps('confirmPassword')}
-            />
+            <br />
+            <div className="password-input-container">
+
+              <input
+                type={confirmPasswordInputType}
+                name='confirmPassword'
+                {...formik.getFieldProps('confirmPassword')}
+              />
+              <span
+                className="password-toggle"
+                onClick={toggleConfirmPasswordVisibility}>
+                {showConfirmPassword ? <EyeSlashIcon /> : <EyeIcon />}
+              </span>
+            </div>
 
             {formik.errors.confirmPassword && formik.touched.confirmPassword && (
               <p>{formik.errors.confirmPassword}</p>
@@ -113,6 +147,7 @@ function Register() {
         <div className="col-right">
           <div className='regis-content'>
             <label>Name</label>
+            <br />
             <input
               type='text'
               name='userName'
@@ -124,6 +159,7 @@ function Register() {
           </div>
           <div className='regis-content'>
             <label>Phone</label>
+            <br />
             <input
               type='text'
               name='phone'
@@ -135,7 +171,7 @@ function Register() {
           </div>
           <div className="gender-container">
             <label className="gender-label">Gender</label>
-            <div className="gender-options">
+            <div className="gender-input">
               <label>
                 <input
                   type="radio"
@@ -144,9 +180,11 @@ function Register() {
                   checked={formik.getFieldProps('genderString').value === "male"}
                   onChange={formik.getFieldProps('genderString').onChange}
                   onBlur={formik.getFieldProps('genderString').onBlur}
+                  className="hidden-radio"
                 />
-                Male
-              </label>
+                <span className="custom-radio"></span>
+                <br />
+                Male</label>
               <label>
                 <input
                   type="radio"
@@ -155,16 +193,17 @@ function Register() {
                   checked={formik.getFieldProps('genderString').value === "female"}
                   onChange={formik.getFieldProps('genderString').onChange}
                   onBlur={formik.getFieldProps('genderString').onBlur}
+                  className="hidden-radio"
                 />
-
-                Female
-              </label>
+                <span className="custom-radio"></span>
+                <br />
+                Female</label>
 
             </div>
 
           </div>
 
-          <button type='submit'>Submit</button>
+          <button className='btn-submit' type='submit'>SUBMIT</button>
         </div>
       </div>
 
