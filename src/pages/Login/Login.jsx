@@ -40,7 +40,7 @@ function Login() {
         console.log({ resp });
         saveLocalStorage(ACCESS_TOKEN, resp.data.content.accessToken);
 
-        navigate('/profile');
+        navigate('/');
       } catch (err) {
         console.log(err);
       }

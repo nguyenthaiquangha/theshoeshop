@@ -33,6 +33,7 @@ function HeaderHomeTemplate() {
                             <p>({totalQuantity})</p>
                         </div>
                     </NavLink>
+                  
                     <li>
                         <NavLink to={'/login'} className={'header-link'}>Login</NavLink>
                     </li>
@@ -41,17 +42,7 @@ function HeaderHomeTemplate() {
                     </li>
                 </div>
 
-                {/* <ul style={{ display: 'flex', gap: '1rem', }}>
-                    <li>
-                        <NavLink to={'/'} style={{ color: 'white' }}>Home</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/login'} style={{ color: 'white' }}>Login</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/register'} style={{ color: 'white' }}>Register</NavLink>
-                    </li>
-                </ul> */}
+               
             </header>
 
             <nav className='header-menu'>

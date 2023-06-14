@@ -94,7 +94,6 @@ function Register() {
               name='email'
               {...formik.getFieldProps('email')}
             />
-
             {formik.errors.email && formik.touched.email && (
               <p>{formik.errors.email}</p>
             )}
@@ -206,9 +205,8 @@ function Register() {
           <button className='btn-submit' type='submit'>SUBMIT</button>
         </div>
       </div>
-
-
     </form>
+
   );
 }
 

@@ -54,9 +54,12 @@ const CartSlide = createSlice({
                 return item
             })
         },
+        clearCart: (state,action) => {
+            state.cart = action.payload;
+        }
     }
 });
 
-export const { addToCart, getCartToTalQuantity,deleteCart,tangItemCart,giamItemCart } = CartSlide.actions
+export const { addToCart, getCartToTalQuantity,deleteCart,tangItemCart,giamItemCart,clearCart } = CartSlide.actions
 
 export default CartSlide.reducer
