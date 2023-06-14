@@ -4,7 +4,10 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { EyeIcon, EyeSlashIcon } from 'src/assets/icon';
 import { useState } from 'react';
+<<<<<<< HEAD
 import './Register.scss';
+=======
+>>>>>>> 76ff8d5e32d16644d37544f9c2a136600fa19c33
 
 const nameRegex = /^[a-zA-ZÀ-ỹ\s']+$/;
 const phoneRegex = /^[0-9]{10}$/;

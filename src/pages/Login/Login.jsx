@@ -1,8 +1,13 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+<<<<<<< HEAD
 import { saveLocalStorage } from 'src/utils';
 import { ACCESS_TOKEN } from 'src/constant';
+=======
+import { saveLocalStorage } from '../../utils';
+import { ACCESS_TOKEN } from '../../constant';
+>>>>>>> 76ff8d5e32d16644d37544f9c2a136600fa19c33
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Login.scss'
 import { useState } from 'react';
@@ -54,7 +59,11 @@ function Login() {
   const passwordInputType = showPassword ? 'text' : 'password';
   return (
     <>
+<<<<<<< HEAD
       <h1 className='login-title'>Login</h1>
+=======
+      <h1 className='login-title'>Register</h1>
+>>>>>>> 76ff8d5e32d16644d37544f9c2a136600fa19c33
       <form className='login-form' onSubmit={formik.handleSubmit}>
         <hr />
 
