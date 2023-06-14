@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { saveLocalStorage } from '../../utils';
-import { ACCESS_TOKEN } from '../../constant';
+import { saveLocalStorage } from 'src/utils';
+import { ACCESS_TOKEN } from 'src/constant';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './Login.scss'
 import { useState } from 'react';

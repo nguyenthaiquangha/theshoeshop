@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
-import { getLocalStorage } from '../../utils';
-import { ACCESS_TOKEN } from '../../constant';
+// import axios from 'axios';
+// import { getLocalStorage } from '../../utils';
+// import { ACCESS_TOKEN } from '../../constant';
 import { axiosWithAuth } from '../../services/config.services';
 
 const initialState = {
@@ -21,7 +21,7 @@ const UserSlice = createSlice({
 	name: 'UserSlice',
 	initialState,
 	reducers: {
-		resetUserProfile: (state, action) => {
+		resetUserProfile: (state) => {
 			state.userProfile = {};
 		},
 	},

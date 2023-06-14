@@ -32,7 +32,7 @@ function CarouselHome() {
             <button className='polygon-1' onClick={() => {
                 carouselRef.current.next();
             }}><Polygon1 /></button>
-            <Carousel ref={carouselRef} effect='fade' dotPosition='bot' afterChange={onChange} autoplay>    
+            <Carousel ref={carouselRef} effect='fade' dotPosition='bot' afterChange={onChange} autoplay>
                 {listProduct.map((product) => {
                     return <div style={contentStyle} className='carousel' key={product.id}>
                         <img src={product.image} alt="" style={{ width: 689, height: 383, objectFit: 'cover', marginRight: '13rem' }} />
